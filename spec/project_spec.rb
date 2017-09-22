@@ -12,10 +12,10 @@ describe(Project) do
 
 
   describe('#save') do
-    it ("saves a project to the database") do
+    it ("saves a project to the DB") do
       project.save()
       name = Project.find(project.id()).name()
-      expect(name).to eq("Feed the Children")
+      expect(name).to eq("charity")
     end
   end
 
@@ -35,7 +35,7 @@ describe(Project) do
   end
 
   describe('.find') do
-    it ("finds a project from the database") do
+    it ("finds a project from the DB") do
       project.save()
       found = Project.find(project.id())
       expect(found).to eq(project)
