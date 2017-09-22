@@ -5,3 +5,17 @@ require('./lib/project')
 require('pg')
 require('pry')
 also_reload('lib/**/*.rb')
+
+DB = PG.connect({:dbname => "volunteer_tracker"})
+
+get('/') do
+  erb(:index)
+end
+
+get('/projects') do
+  erb(:projects)
+end
+
+get('/volunteers') do
+  erb(:volunteers)
+end
