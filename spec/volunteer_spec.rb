@@ -10,7 +10,7 @@ describe(Volunteer) do
     end
   end
   describe('#save') do
-    it ("saves a volunteer to the database") do
+    it ("saves a volunteer to the DB") do
       volunteer.save()
       expect(volunteer.name()).to eq("Tyler Miller")
     end
@@ -32,7 +32,7 @@ describe(Volunteer) do
   end
 
   describe('.find') do
-    it ("finds a volunteer from the database") do
+    it ("finds a volunteer from the DB") do
       volunteer.save()
       found = Volunteer.find(volunteer.id())
       expect(found).to eq(volunteer)
