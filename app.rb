@@ -6,7 +6,7 @@ require('pg')
 require('pry')
 also_reload('lib/**/*.rb')
 
-DB = PG.connect({:dbname => "volunteer_tracker"})
+DB = PG.connect({:dbname => "volunteer_tracker", :user => "postgres", :password => "Emendo2013"})
 
 get('/') do
   erb(:index)
@@ -26,5 +26,9 @@ post('/projects') do
 end
 
 get('/volunteers') do
+  erb(:volunteers)
+end
+
+post('/volunteers') do
   erb(:volunteers)
 end

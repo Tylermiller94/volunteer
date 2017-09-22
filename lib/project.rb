@@ -6,6 +6,13 @@ class Project
   attributes.each do |key, value|
     instance_variable_set("@#{key}", value) unless value.nil?
   end
-end
+
+
+  def save
+    result = DB.exec("INSERT INTO projects (name) VALUES ('#{@name}') RETURNING id;")
+    @id = result.first()['id'].to_i
+  end
+
+
 
 end

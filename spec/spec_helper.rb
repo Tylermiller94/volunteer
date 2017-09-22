@@ -3,7 +3,7 @@ require './lib/volunteer'
 require 'pry'
 require 'pg'
 
-DB = PG.connect({:dbname => "volunteer_tracker"})
+DB = PG.connect({:dbname => "volunteer_tracker", :user => "postgres", :password => "Emendo2013"})
 
 RSpec.configure do |config|
   config.after(:each) do
