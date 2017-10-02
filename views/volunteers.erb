@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Volunteers Page</h1>
+  <% if @volunteers.any? %>
+    <h2>Volunteer List</h2>
+    <ul>
+      <% @volunteers.each() do |volunteer| %>
+        <a href="volunteers/<%= volunteer.id()%>"><li><%= volunteer.name() %></li></a>
+      <% end %>
+    </ul>
+  <% else %>
+    <h2>You do not have any volunteers yet.</h2>
+  <% end %>
+  <a href="/"><button type="button" class="btn btn-primary" name="button">Go Home</button></a>
+</div>
