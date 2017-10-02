@@ -1,5 +1,4 @@
 require('spec_helper')
-require('./lib/volunteer')
 
 describe(Volunteer) do
   volunteer = Volunteer.new({:first_name => "Tyler", :last_name => "Miller"})
@@ -18,13 +17,12 @@ describe(Volunteer) do
 
   describe('#project_id') do
     it("returns the id of the project the volunteer is assigned to") do
-      volunteer = Volunteer.new({:first_name => "Ilene", :last_name => "Gorski", :project_id => 4})
+      volunteer = Volunteer.new({:first_name => "Tyler", :last_name => "Miller", :project_id => 4})
       expect(volunteer.project_id()).to eq(4)
     end
   end
-
   describe('#save') do
-    it ("saves a volunteer to the DB") do
+    it ("saves a volunteer to the database") do
       volunteer.save()
       expect(volunteer.name()).to eq("Tyler Miller")
     end
@@ -40,7 +38,7 @@ describe(Volunteer) do
 
   describe('#add_project') do
     it ("adds a project id in the volunteer table") do
-      volunteer = Volunteer.new({:first_name => "Ilene", :last_name => "Gorski"})
+      volunteer = Volunteer.new({:first_name => "Tyler", :last_name => "Miller"})
       volunteer.save()
       project = Project.new({:name => "Feed the Children"})
       project.save()
@@ -52,17 +50,17 @@ describe(Volunteer) do
 
   describe('#update_volunteer') do
     it ("updates the volunteer's information in the database") do
-      volunteer = Volunteer.new({:first_name => "Eileen", :last_name => "Gorski"})
+      volunteer = Volunteer.new({:first_name => "Tyler", :last_name => "Miller"})
       volunteer.save()
-      volunteer.update_volunteer({:first_name => "Ilene", :last_name => "Gorski"})
+      volunteer.update_volunteer({:first_name => "Tyler", :last_name => "Miller"})
       volunteer = Volunteer.find(volunteer.id())
-      expect(volunteer.name()).to(eq("Ilene Gorski"))
+      expect(volunteer.name()).to(eq("Tyler Miller"))
     end
   end
 
   describe('#delete_volunteer') do
     it ("deletes a volunteer") do
-      volunteer = Volunteer.new({:first_name => "Ilene", :last_name => "Gorski"})
+      volunteer = Volunteer.new({:first_name => "Tyler", :last_name => "Miller"})
       volunteer.save()
       volunteer.delete_volunteer()
       expect(Volunteer.all()).to eq([])
@@ -77,7 +75,7 @@ describe(Volunteer) do
   end
 
   describe('.find') do
-    it ("finds a volunteer from the DB") do
+    it ("finds a volunteer from the database") do
       volunteer.save()
       found = Volunteer.find(volunteer.id())
       expect(found).to eq(volunteer)
