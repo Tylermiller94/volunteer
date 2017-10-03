@@ -6,7 +6,7 @@ require('pg')
 require('pry')
 also_reload('lib/**/*.rb')
 
-DB = PG.connect({:dbname => "volunteer_tracker", :user => "postgres"})
+DB = PG.connect({:dbname => "volunteer_tracker"})
 
 get('/') do
   @projects = Project.all()

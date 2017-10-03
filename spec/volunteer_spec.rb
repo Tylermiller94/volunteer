@@ -40,7 +40,7 @@ describe(Volunteer) do
     it ("adds a project id in the volunteer table") do
       volunteer = Volunteer.new({:first_name => "Tyler", :last_name => "Miller"})
       volunteer.save()
-      project = Project.new({:name => "Feed the Children"})
+      project = Project.new({:name => "charity"})
       project.save()
       volunteer.add_project({:project_id => project.id()})
       volunteer.save()

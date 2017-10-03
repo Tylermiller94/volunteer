@@ -37,11 +37,6 @@ class Project
     DB.exec("DELETE FROM projects WHERE id = #{self.id()};")
   end
 
-  def save
-    result = DB.exec("INSERT INTO projects (name) VALUES ('#{@name}') RETURNING id;")
-    @id = result.first()['id'].to_i()
-  end
-
   class << self
   def all
     all_projects = DB.exec('SELECT * FROM projects ORDER BY name;')

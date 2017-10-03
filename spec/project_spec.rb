@@ -34,7 +34,7 @@ describe(Project) do
 
   describe('#delete_project') do
     it ("deletes a project") do
-      project = Project.new({:name => "Meals on Wheels"})
+      project = Project.new({:name => "Project"})
       project.save()
       project.delete_project()
       expect(Project.all()).to eq([])
