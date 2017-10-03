@@ -10,16 +10,16 @@
   <% else %>
     <h3>You do not have any projects yet.</h3>
   <% end %>
-  <button id="add" type="button" class="btn btn-primary" name="button">Add a project</button>
+  <button id="add" type="button" class="btn" name="button">Add a project</button>
 
   <form class="add" action="/projects" method="post">
     <div class="form-group">
       <label for="name">Project name</label>
       <input type="text" name="name" value="" required>
     </div>
-    <button type="submit" class="btn btn-success" name="button">Submit</button>
+    <button type="submit" class="btn" name="button">Submit</button>
   </form>
 
-  <a href="/"><button type="button" class="btn btn-info" name="button">Go Home</button></a>
+  <a href="/"><button type="button" class="btn" name="button">Go Home</button></a>
 
 </div>

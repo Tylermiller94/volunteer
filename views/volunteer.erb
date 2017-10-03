@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Volunteer: <%= @volunteer.name() %></h1>
   <h3>What would you like to do?</h3>
-  <button id="add" type="button" name="button" class="btn btn-success">Update volunteer name</button>
+  <button id="add" type="button" name="button" class="btnß">Update volunteer name</button>
   <form class="add" action="/volunteers/<%= @volunteer.id() %>" method="post">
     <input type="hidden" name="_method" value="patch">
     <div class="form-group">
@@ -12,12 +12,12 @@
       <label for="last_name">Last Name</label>
       <input type="text" name="last_name" value="">
     </div>
-    <button type="submit" name="button" class="btn btn-warning">Submit</button>
+    <button type="submit" name="button" class="btn">Submit</button>
   </form>
   <form action="/volunteers" method="post">
     <input type="hidden" name="_method" value="delete">
     <input type="hidden" name="id" value="<%= @volunteer.id() %>">
-    <button type="submit" class="btn btn-primary">Delete this Volunteer</button>
+    <button type="submit" class="btn">Delete this Volunteer</button>
   </form>
-  <a href="/"><button type="button" name="button" class="btn btn-info">Go Home</button></a>
+  <a href="/"><button type="button" name="button" class="btn">Go Home</button></a>
 </div>
